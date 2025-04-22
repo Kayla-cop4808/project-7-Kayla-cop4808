@@ -3,17 +3,18 @@ import { Link } from "react-router-dom";
 
 const ReadCrewmates = ({ crewmates }) => {
   return (
-    <div>
+    <div className="gallery-container">
       <h2>Crewmate Gallery</h2>
-      {crewmates.map((mate) => (
-        <div key={mate.id}>
-          <Link to={`/details/${mate.id}`}>
-            <h3>{mate.name}</h3>
-            <p>Attribute: {mate.attribute}</p>
-          </Link>
-          <Link to={`/edit/${mate.id}`}><button>Edit</button></Link>
-        </div>
-      ))}
+      <div className="crewmate-cards">
+        {crewmates.map((crewmate) => (
+          <div key={crewmate.id} className="crewmate-card">
+            <h3>{crewmate.name}</h3>
+            <p><strong>Attribute:</strong> {crewmate.attribute}</p>
+            <p><strong>Color:</strong> {crewmate.color}</p>
+            <Link to={`/details/${crewmate.id}`} className="view-details-link">View Details</Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

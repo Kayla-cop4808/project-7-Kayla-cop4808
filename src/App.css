@@ -1,38 +1,96 @@
+/* App.css */
+
 .App {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidenav {
+  width: 240px;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidenav-link {
+  color: #fff;
+  padding: 10px 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.sidenav-link:hover {
+  color: #ffcc00;
+}
+
+.sidenav-image {
+  margin-top: auto;
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #f7f7f7;
+}
+/* Gallery Container */
+.gallery-container {
+  margin: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.crewmate-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Card Styles */
+.crewmate-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.crewmate-card:hover {
+  transform: scale(1.05);
+}
+
+.crewmate-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.crewmate-card p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.edit-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #4caf50;
   color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit-link:hover {
+  background-color: #45a049;
 }
